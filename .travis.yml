@@ -1,5 +1,14 @@
+dist: trusty
+
 language:
   - cpp
+
+addons:
+  sonarcloud:
+    organization: "neroec"
+    token:
+      secure: cb32d93945111b8bd200800beb6180d611a5507e
+
 
 before_install:
   - pip install --user cpp-coveralls
@@ -8,9 +17,15 @@ script:
   - qmake
   - make
   - ./tests/tests
+  - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
+  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
+
+cache:
+ directories:
+  - '$HOME/.sonar/cache'
 
 notifications:
   email: false
