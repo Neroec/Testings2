@@ -6,8 +6,7 @@ language:
 addons:
   sonarcloud:
     organization: "neroec"
-    token:
-	secure: Neroe's_token
+    token: $SONAR_TOKEN
 
 
 before_install:
