@@ -8,7 +8,6 @@ addons:
     organization: "neroec"
     token: $SONAR_TOKEN
 
-
 before_install:
   - pip install --user cpp-coveralls
 
