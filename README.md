@@ -1,3 +1,3 @@
-[![Build Status](https://travis-ci.org/Neroec/Testings1.svg?branch=master)](https://travis-ci.org/github/Neroec/Testings1)
-[![Coverage Status](https://coveralls.io/repos/github/Neroec/Testings1/badge.svg?branch=master)](https://coveralls.io/github/Neroec/Testings1?branch=master)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Neroec_Testings1&metric=alert_status)](https://sonarcloud.io/dashboard?id=Neroec_Testings1)
+[![Build Status](https://travis-ci.org/Neroec/Testings2.svg?branch=master)](https://travis-ci.org/github/Neroec/Testings2)
+[![Coverage Status](https://coveralls.io/repos/github/Neroec/Testings2/badge.svg?branch=master)](https://coveralls.io/github/Neroec/Testings2?branch=master)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Neroec_Testings2&metric=alert_status)](https://sonarcloud.io/dashboard?id=Neroec_Testings2)
