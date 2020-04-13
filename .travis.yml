@@ -20,8 +20,7 @@ script:
 after_success:
   - coveralls --root . -E ".*external.*" -E ".*tests.*"
   - build-wrapper-linux-x86-64 --out-dir bw-output make clean all
-  - sonar-scanner
-
+  - sonar-scanner -Dsonar.cfamily.build-wrapper-output=bw-output
 
 cache:
  directories:
