@@ -24,7 +24,8 @@ int m(text txt, int arg1, int arg2)
     node* current = txt->begin;
     
     /* Смещаем указатель до нужной строки */
-    for (int i = 0; i < arg1; i++) {
+    int i;
+    for (i = 0; i < arg1; i++) {
         current = current->next;
     }
     
