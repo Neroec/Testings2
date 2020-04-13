@@ -5,7 +5,6 @@ CONFIG -= qt
 
 SOURCES += \
     main.c \
-    ../app_editor/editor.c \
     ../app_editor/load.c \
     ../app_editor/save.c \
     ../app_editor/show.c \
