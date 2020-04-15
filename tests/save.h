@@ -1,3 +1,4 @@
+#include <errno.h>
 #include <gtest/gtest.h>
 
 /* using namespace testing; */
