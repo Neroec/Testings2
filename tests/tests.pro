@@ -16,25 +16,22 @@ LIBS += -lgcov
 
 
 HEADERS += \
-    ../app/myfunc.h \
-    ../app_editor/text/_text.h \
-    ../app_editor/text/text.h \
-    ../app_editor/common.h \
-    j.h \
+    ../app/_text.h \
+    ../app/text.h \
+    save.h \
+    showodd.h \
     m.h \
     mp.h \
-    save.h \
-    showodd.h
+    j.h
     
 SOURCES += \
     main.cpp \
-    ../app_editor/text/process_forward.c \
-    ../app_editor/text/m.c \
-    ../app_editor/text/mp.c \
-    ../app_editor/text/j.c \
-    ../app_editor/save.c \
-    ../app_editor/showodd.c
+    ../app/process_forward.c \
+    ../app/text/save.c \
+    ../app/text/showodd.c \
+    ../app/text/m.c \
+    ../app/mp.c \
+    ../app/j.c
     
 INCLUDEPATH += \
-    ../app \
-    ../app_editor
+    ../app

@@ -10,6 +10,15 @@
 
 int m(text txt, int arg1, int arg2)
 {
+    /* Проверяем, имеется ли текст */
+    if (txt == NULL || txt->length == 0) {
+        fprintf(stderr, "В тексте нету строк!\n");
+        return 5;
+    }
+
+    /* Текст ненулевой длины должен содержать хотя бы одну строку */
+    assert(txt->begin != NULL && txt->end != NULL);
+    
     /* Проверяем на наличие строки с данным номером */
     if (arg1 < 0) {
         printf("Нумерация строк начинается с 0\n");
@@ -19,7 +28,7 @@ int m(text txt, int arg1, int arg2)
         printf("Нет строки с таким номером\nПоследний номер: %d\n", (int) txt->length - 1);
         return 2;
     }
-    
+
     /* Указатель на новую строку с курсором */
     node* current = txt->begin;
     
@@ -28,20 +37,33 @@ int m(text txt, int arg1, int arg2)
     for (i = 0; i < arg1; i++) {
         current = current->next;
     }
+
+    /* Новая строка курсора */
+    txt->cursor->line = current;
+    
+    /* Длина строки */
+    size_t lenght = strlen(current->contents);
+    
+    /* Проверяем строку */
+    if (lenght == 0) {
+        fprintf(stderr, "Это пустая строка, в ней нет позиции!\n");
+        return 6;
+    }
+    if (lenght == 1) {
+	txt->cursor->position = 0;
+        return 0;
+    }
     
     /* Проверяем на наличие данной позиции в строке */
     if (arg2 < 0) {
         printf("Нумерация позиций в строке начинается с 0\n");
         return 3;
     }
-    if (arg2 > (int) strlen(current->contents) - 2) {
-        printf("В строке нет такой позиции\nПоследняя позиция: %d\n", (int) strlen(current->contents) - 2);
+    if (arg2 > (int) lenght - 2) {
+        printf("В строке нет такой позиции\nПоследняя позиция: %d\n", (int) lenght - 2);
         return 4;
     }
-    
-    /* Новая строка курсора */
-    txt->cursor->line = current;
-    
+        
     /* Новая позиция курсора в строке */
     txt->cursor->position = arg2;
     

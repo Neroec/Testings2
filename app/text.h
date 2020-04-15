@@ -11,6 +11,10 @@
 
 #define MAXLINE 255
 
+/* Декларирует неиспользуемый аргумент,
+ * корректно подавляя предупреждение вида "unused parameter" */
+#define UNUSED(x) (void)(x)
+
 /**
  * Абстрактный тип текстовых объектов
  */
@@ -20,22 +24,6 @@ typedef struct _list *text;
  * Абстрактный тип курсора
  */
 typedef struct _crsr *cursor;
-
-
-/**
- * Создает новый текстовый объект
- * @returns текст
- */
-text create_text();
-
-/**
- * Добавляет одну строку к тексту
- * @param txt текст
- * @param contents новая строка
- * @returns none
- */
-void append_line(text txt, const char *contents);
-
 
 /**
  * Обрабатывает текст, применяя заданную функцию к каждой строке
@@ -50,14 +38,19 @@ void process_forward(
     void *data
 );
 
+/**
+ * Выгружает содержимое в указанный файл
+ * @param txt текст
+ * @param filename имя файла для сохраннеия текста
+ */
+void save(text txt, char *filename);
 
 /**
- * Удаляет весь текст
- * 
+ * Выводит содержимое указанного файла на экран, опуская чётные строки
  * @param txt текст
- * @returns none
+ * @param filename имя файла для сохранения вывода
  */
-void remove_all(text txt);
+void showodd(text txt, char *filename);
 
 /**
  * Перемещаем курсор в заданную позицию

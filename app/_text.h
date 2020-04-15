@@ -30,7 +30,6 @@ typedef struct _node {
     struct _node *next;         /**< указатель на следующую строку */
 } node;
 
-
 /**
  * @struct 
  * @brief Представление курсора
@@ -40,7 +39,6 @@ typedef struct _crsr {
     struct _node *line;         /**< указатель на строку с курсором */
     int position;               /**< позиция курсора в строке */
 } crsr;
-
 
 /**
  * @struct 

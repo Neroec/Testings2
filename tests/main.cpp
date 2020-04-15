@@ -1,8 +1,8 @@
+#include "save.h"
+#include "showodd.h"
 #include "m.h"
 #include "mp.h"
 #include "j.h"
-#include "showodd.h"
-#include "save.h"
 
 #include <gtest/gtest.h>
 

@@ -10,8 +10,23 @@
 
 int j(text txt)
 {
+    /* Проверяем, имеется ли текст */
+    if (txt == NULL || txt->length == 0) {
+        fprintf(stderr, "В тексте нету строк!\n");
+        return 2;
+    }
+
+    /* Текст ненулевой длины должен содержать хотя бы одну строку */
+    assert(txt->begin != NULL && txt->end != NULL);
+    
     /* Объявляем используемые переменные */
     int i;
+
+    /* Проверяем строку с курсором */
+    if (txt->cursor->line == NULL) {
+        fprintf(stderr, "Курсор указывает в никуда!\n");
+        return 3;
+    }
     
     /* Запоминаем строку */
     node *nd = txt->cursor->line->next;
@@ -24,10 +39,10 @@ int j(text txt)
 
     /* Удаляем символ перевода строки */
     for (i = 0; txt->cursor->line->contents[i] != '\n'; i++);
-    txt->cursor->line->contents[i] = ' ';
+    txt->cursor->line->contents[i] = '\0';
 
     /* Прикрепляем следующую строку */
-    strcat(txt->cursor->line->contents, nd->contents);
+    strncat(txt->cursor->line->contents, nd->contents, MAXLINE);
 
     /* Меняем связи */
     if (nd->next != NULL) {

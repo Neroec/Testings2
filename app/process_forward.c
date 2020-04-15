@@ -23,7 +23,7 @@ void process_forward(
 {   
     /* Проверяем, имеется ли текст */
     if (txt == NULL || txt->length == 0) {
-        fprintf(stderr, "There are already no any lines in the text!\n");
+        fprintf(stderr, "В тексте нету строк!\n");
         return;
     } 
     
