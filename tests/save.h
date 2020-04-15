@@ -6,6 +6,11 @@ extern "C" {
 #include "_text.h"
 }
 
+TEST(main_positive, correct)
+{
+    EXPECT_EQ(main(), 0);
+}
+
 TEST(save_positive, correct)
 {
     char line1[MAXLINE+1] = {"0Helloy\n"};
