@@ -27,9 +27,9 @@ HEADERS += \
 SOURCES += \
     main.cpp \
     ../app/process_forward.c \
-    ../app/text/save.c \
-    ../app/text/showodd.c \
-    ../app/text/m.c \
+    ../app/save.c \
+    ../app/showodd.c \
+    ../app/m.c \
     ../app/mp.c \
     ../app/j.c
     
