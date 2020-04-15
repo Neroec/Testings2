@@ -108,7 +108,6 @@ TEST(showodd_negative, zero_lines)
     txt->cursor = NULL;
 
     FILE *file;
-    size_t lenght;
     char line[MAXLINE+1] = {"showodd.txt"};
 
     showodd(txt, line);
