@@ -76,6 +76,4 @@ int mp(text txt, int arg1);
  */
 int j(text txt);
 
-int main();
-
 #endif
