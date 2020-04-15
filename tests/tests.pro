@@ -26,7 +26,6 @@ HEADERS += \
     
 SOURCES += \
     main.cpp \
-    ../app/main.c \
     ../app/process_forward.c \
     ../app/save.c \
     ../app/showodd.c \
