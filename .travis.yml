@@ -25,10 +25,5 @@ after_success:
 - sonar-scanner
 
 
-cache:
-directories:
-- '$HOME/.sonar/cache'
-
-
 notifications:
 email: false

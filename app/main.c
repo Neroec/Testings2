@@ -4,5 +4,6 @@
 
 int main()
 {
+    m(NULL, 0, 0);
     return 0;
 }
