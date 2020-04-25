@@ -1,16 +1,16 @@
 language:
-    -cpp
+-cpp
 
 before_install:
-    - pip install --user cpp-coveralls
+- pip install --user cpp-coveralls
 
 script:
-    - qmake
-    - make
-    -./tests/tests
+- qmake
+- make
+-./tests/tests
 
 after_success:
-    - coveralls --root . -E ".*external.*" -E ".*tests.*"
+- coveralls --root . -E ".*external.*" -E ".*tests.*"
 
 notifications:
-    email: false
+email: false
